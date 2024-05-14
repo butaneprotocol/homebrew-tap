@@ -7,5 +7,5 @@ This repository contains formulas for installing butane's projects using [Homebr
 To fetch the tap, just run `brew tap butaneprotocol/homebrew-tap`. You can also just install any Butane project by name:
 
 ```sh
-brew install butaneprotocol/tap/aikup
+brew install butaneprotocol/tap/oracles
 ```
