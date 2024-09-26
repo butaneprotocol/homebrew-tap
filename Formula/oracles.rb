@@ -1,25 +1,25 @@
 class Oracles < Formula
   desc "Oracles"
   homepage "https://github.com/butaneprotocol/oracles"
-  version "0.13.2"
+  version "0.13.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.2/oracles-aarch64-apple-darwin.tar.xz"
-      sha256 "df7e05a6e9af2a9a4c8ce4a7b22605ee2768e29a0fa03a7e1224573f3930960f"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.3/oracles-aarch64-apple-darwin.tar.xz"
+      sha256 "5d905fd405d137b68c2e8c1ab245b166012ed9d492a9a5af3a04cff5ceb29f83"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.2/oracles-x86_64-apple-darwin.tar.xz"
-      sha256 "3bc69b8eb92c4ceb6d7fcb9c0340505c917376941e09f959345f35aaa3f055ae"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.3/oracles-x86_64-apple-darwin.tar.xz"
+      sha256 "562266ecb10e85b0e04d5c167d1a95e7a01073e0641585e720461e2ec3a80ff1"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.2/oracles-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "81afd19ce60f8b2c73aa8f99b53f50f40a3dd7fbfc32cefb94ce01f951f5d4cf"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.3/oracles-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "410384a38c54b049e4527eda7728b6ae59f947a2b00021b538fd3f6551a9fc67"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.2/oracles-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "019abee684e0caa060001800dbd6606c19ef3024d9b66a473ebeafd394fc22b2"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.13.3/oracles-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4fb758f9fdf6888174581158707099a887784326a7676169a25438008cd3e4d3"
     end
   end
 
