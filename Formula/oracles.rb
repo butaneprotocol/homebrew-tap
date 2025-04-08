@@ -1,29 +1,35 @@
 class Oracles < Formula
   desc "Oracles"
   homepage "https://github.com/butaneprotocol/oracles"
-  version "0.23.0"
+  version "0.24.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.23.0/oracles-aarch64-apple-darwin.tar.xz"
-      sha256 "302a33f227656d9c18bd6046538146e524d24d641faa59f91bb2979026f4e569"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.24.1/oracles-aarch64-apple-darwin.tar.xz"
+      sha256 "6721c6671ed036a4808e988aefd5c68ba34755de1288135388b6be7c6ef8ada3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.23.0/oracles-x86_64-apple-darwin.tar.xz"
-      sha256 "5de293a43aa6f421e3e23453572a3132ac1a681e10bd283783eb5444a326df95"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.24.1/oracles-x86_64-apple-darwin.tar.xz"
+      sha256 "75c274c8b6e7145ae10a7d25bf827848b03492a7bcfb5a393c315deab88a5f1c"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.23.0/oracles-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "aa29eed5d237f9bc23f2e76ec7f5e423330f9550a9320b02f80592a0a22cde2c"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.24.1/oracles-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d1239fe24c2f9ed467bfc863c94085ebd9a192b1d0ade540b1324725a1ce2bc2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/butaneprotocol/oracles/releases/download/v0.23.0/oracles-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d0051908ea77fdf53dd1bd3cb8f694eca3f0828d8cf186f93d7cea4ee567809e"
+      url "https://github.com/butaneprotocol/oracles/releases/download/v0.24.1/oracles-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "bf470905dcf6cfe74b5dd09959f61f5fac3d02ace1f438a3cdeddd016a5c5cbb"
     end
   end
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -41,18 +47,10 @@ class Oracles < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "keygen", "oracles"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "keygen", "oracles"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "keygen", "oracles"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "keygen", "oracles"
-    end
+    bin.install "keygen", "oracles" if OS.mac? && Hardware::CPU.arm?
+    bin.install "keygen", "oracles" if OS.mac? && Hardware::CPU.intel?
+    bin.install "keygen", "oracles" if OS.linux? && Hardware::CPU.arm?
+    bin.install "keygen", "oracles" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
